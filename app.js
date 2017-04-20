@@ -8,6 +8,14 @@ const Vision = require('vision');
 const Handlebars = require('handlebars');
 const pg = require('pg');
 const Sequelize = require('sequelize');
+const Twit = require('twit');
+
+var client = new Twit({
+    consumer_key: 'lAu7pibfnQwnX7f8Ztu7oVYwk',
+    consumer_secret: 'Qt1F6AKzTcsSH5jFdmlYVO8mWfZv7MIBanZaUfgnu1StHe7c2P',
+    access_token: '46086006-w3g94WkgESdK1Ga4LyprkPhx39PKpcZXoi9JPsSm4',
+    access_token_secret: 'uxlvnxrmEwk2xW1Vzj7kXemDr2ggAPWFOEmnlltDUJHkT'
+});
 
 const server = new Hapi.Server({
     connections: {
@@ -102,10 +110,16 @@ server.route({
 });
 
 
-server.start((err) => {
+var stream = client.stream('statuses/filter', { track: 'mango' });
 
-    if (err) {
-        throw err;
-    }
-    console.log(`Server running at: ${server.info.uri}`);
+stream.on('tweet', function (tweet) {
+  console.log(tweet + "\n\n");
 });
+
+//server.start((err) => {
+//
+//    if (err) {
+//        throw err;
+//    }
+//    console.log(`Server running at: ${server.info.uri}`);
+//});

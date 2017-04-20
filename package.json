@@ -1,5 +1,5 @@
 {
-  "name": "dinostory",
+  "name": "Final",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,9 +13,10 @@
     "handlebars": "^4.0.6",
     "hapi": "^16.1.0",
     "inert": "^4.1.0",
+    "pg": "^6.1.5",
     "sequelize": "^3.30.2",
     "sqlite3": "^3.1.8",
-    "svgutils": "^0.13.6",
+    "twit": "^2.2.5",
     "vision": "^4.1.1"
   }
 }
