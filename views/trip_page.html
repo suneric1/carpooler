@@ -1,54 +1,40 @@
-<!DOCTYPE html>
+<div class="container-fluid col-xs-12" id="main">
+    <form class="form-horizontal" action="/pool/{{id}}" method="GET">
 
-<html lang="en">
+        <h3 class="title">{{tripname}}</h3>
+        <p class="intro">carpooler.com/trip/{{id}}</p>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <div class="form-group">
+            <label for="destination">Destination</label>
+            <input type="text" value="{{destination}}" name="destination" id="destination" class="form-control" onkeyup="autoComplete(this)" onchange="updateDest({{id}},this)" list="dest_suggest">
+            <datalist id="dest_suggest">
+            </datalist>
+        </div>
 
-    <title>Carpooler</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-</head>
+        <h4>Stops</h4> {{#list people}}
+        <div class="people">
+            <p id="{{id}}">{{name}}</p>
+            <p class="addr">{{location}}</p>
+            <a href="/trip/{{tid}}/remove/{{id}}">REMOVE</a>
+        </div>
+        {{/list}}
 
-<body>
-    <div class="container-fluid col-xs-12" id="main">
-        <form class="form-horizontal" action="/pool/{{id}}" method="GET">
-
-            <h4>{{tripname}}</h4>
-            <p>carpooler.com/{{id}}</p>
-
-            <div class="form-group">
-                <label for="destination">Destination</label>
-                <input type="text" value="{{destination}}" name="destination" id="destination" class="form-control" onkeyup="autoComplete(this)" onchange="updateDest({{id}},this)" list="dest_suggest">
-                <datalist id="dest_suggest">
-                </datalist>
-            </div>
-
-            {{#list people}}
-            <div class="people">
-                <p>{{name}}</p>
-                <p>{{location}}</p>
-                <p>seats: {{seats}}</p>
-            </div>
-            {{/list}}
-
+        <div class="col-xs-5 col-md-offset-1 col-md-4">
             <a href="/trip/{{id}}/add">
                 <button type="button" class="btn btn-default">Add</button>
             </a>
-            <button type="submit" class="btn btn-default">Pool</button>
+        </div>
+        <div class="col-xs-offset-2 col-xs-5 col-md-offset-2 col-md-4">
+            <a href="/trip/{{id}}/pool">
+                <button type="button" class="btn btn-default pool">Pool</button>
+            </a>
+        </div>
+        <div class="clear"></div>
 
-            <div class="clear"></div>
-
-        </form>
-    </div>
+    </form>
+</div>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/script.js"></script>
-</body>
-
-</html>
+<script>
+$(function(){console.log($('.people a')[0].remove());});
+</script>

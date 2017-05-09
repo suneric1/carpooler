@@ -1,0 +1,24 @@
+<div class="container-fluid col-xs-12" id="main">
+    <form class="form-horizontal" action="/trip/{{id}}/add" method="POST">
+
+        <h3 class="title">Add Stop</h3>
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" placeholder="" name="name" id="name" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="location">Your Location</label>
+            <input type="text" placeholder="Enter Your Location" name="location" id="location" class="form-control" onkeyup="autoComplete(this)" list="loc_suggest">
+            <datalist id="loc_suggest">
+            </datalist>
+        </div>
+
+        <div class="col-xs-offset-4 col-xs-4">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+
+        <div class="clear"></div>
+
+    </form>
+</div>

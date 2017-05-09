@@ -6,6 +6,9 @@ $(function () {
 var key = "AIzaSyBN5J7kC4rHwCTkgBJKAjjHecp6cIl-MP0";
 var lat, lng;
 
+
+
+
 function autoComplete(obj) {
 
     var auto_api = "https://maps.googleapis.com/maps/api/place/autocomplete/json?language=en&input=";
@@ -63,6 +66,8 @@ function showPosition(position) {
             return response.text();
         }).then(function (text) {
             var addr = JSON.parse(text);
-            $('#location').val(addr.results[0].formatted_address);
+            if ($('#location').val() == '') {
+                $('#location').val(addr.results[0].formatted_address);
+            }
         });
 }

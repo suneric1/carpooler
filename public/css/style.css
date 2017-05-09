@@ -1,3 +1,117 @@
 div.people {
     background: rgba(0, 0, 0, 0.1);
 }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    letter-spacing: 0.5px;
+}
+
+#main{
+    padding-bottom: 100px;
+}
+
+.form-group{
+    margin-left: 0!important;
+    margin-right: 0!important;
+}
+
+label, h4{
+    font-size: 16px;
+}
+
+h4{
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+p{
+    font-size: 24px;
+}
+
+div.people{
+    border-radius: 12px;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #F4F4F4;
+}
+
+.people .addr{
+    margin-top: -5px;
+    font-size: 16px;
+}
+
+p.intro{
+    font-weight: 200;
+    font-size: 24px;
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+h3.title{
+    font-size: 36px;
+    font-weight: 500;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+button{
+    font-size: 20px!important;
+    margin-top: 40px;
+    background: #f4f4f4!important;
+    width: 100%;
+    border: none!important;
+    box-shadow: #6e6e6e 0 4px;
+    border-radius: 20px!important;
+}
+
+button.pool{
+    background: #D3F0A2!important;
+}
+
+button:hover{
+    transform: translateY(1px);
+    box-shadow: #6e6e6e 0 3px;
+}
+
+button:focus{
+    outline: none!important;
+    transform: translateY(3px)!important;
+    box-shadow: #6e6e6e 0 1px!important;
+}
+
+input[type=text] {
+    font-size: 18px;
+    border: none;
+    border-radius: 0px;
+    box-shadow: 0px 2px 0px 0px #eee;
+    transition: all 0.2s;
+}
+
+input[type=text]:focus{
+    box-shadow: 0px 2px 0px 0px #3a3a3a;
+}
+
+
+@media screen and (max-width: 768px) {
+    body{
+        
+    }
+    
+    h3.title{
+        font-size: 28px;
+    }
+    
+    p.intro{
+        font-size: 18px;
+    }
+    
+    p{
+        font-size: 18px;
+    }
+    
+    .people .addr{
+        font-size: 12px;
+    }
+}

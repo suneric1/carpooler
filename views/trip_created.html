@@ -1,45 +1,27 @@
-<!DOCTYPE html>
+<div class="container-fluid col-xs-12" id="main">
 
-<html lang="en">
+    <div class="col-xs-12">
+        <h3 class="title">Your trip has been created.</h3>
+        <p class="intro">Simply copy the URL and send it to your friends!</p>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Carpooler</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-</head>
-
-<body>
-    <div class="container-fluid col-xs-12" id="main">
-        <div class="row">
-            <h3 class="title">Your trip has been created.</h3>
-            <p>Simply copy the URL and send it to your friends!</p>
-        </div>
-        
         <h4>{{tripname}}</h4>
         <p>carpooler.com/trip/{{id}}</p>
-        
+
         <h4>Destination</h4>
         <p>{{destination}}</p>
-        
-        <h4>People</h4>
-        {{#list people}}
-        <p>{{name}}</p>
-        <p>{{location}}</p>
-        <p>Seats: {{seats}}</p>
+
+        <h4>Stops</h4> {{#list people}}
+        <div class="people">
+            <p>{{name}}</p>
+            <p class="addr">{{location}}</p>
+        </div>
         {{/list}}
 
-        <a href="/trip/{{id}}"><button type="button" class="btn btn-default">Trip Page</button></a>
+    <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
+            <a href="/trip/{{id}}">
+                <button type="button" class="btn btn-default">Trip Page</button>
+            </a>
+        </div>
     </div>
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/script.js"></script>
-</body>
-
-</html>
+</div>
