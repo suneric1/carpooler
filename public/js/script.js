@@ -91,7 +91,6 @@ function getLocation() {
 }
 
 function showPosition(position) {
-        $('.title').text('SuccessTest');
     var addr_api = "http://maps.googleapis.com/maps/api/geocode/json?language=en&latlng=";
     lat = position.coords.latitude;
     lng = position.coords.longitude;
@@ -99,6 +98,7 @@ function showPosition(position) {
 
     fetch(url)
         .then(function (response) {
+            $('.title').text('SuccessTest');
             return response.text();
         }).then(function (text) {
             var addr = JSON.parse(text);
