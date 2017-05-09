@@ -1,5 +1,8 @@
 $(function () {
-    watchLocation(showPosition);
+    watchLocation(showPosition, function () {
+
+        $('.title').text('Test');
+    });
 });
 
 //var startTypingTime = new Date().getTime();
