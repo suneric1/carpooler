@@ -1,5 +1,5 @@
 $(function () {
-    watchLocation();
+    watchLocation(showPosition);
 });
 
 //var startTypingTime = new Date().getTime();
