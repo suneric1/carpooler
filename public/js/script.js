@@ -74,22 +74,6 @@ function watchLocation(successCallback, errorCallback) {
     }
 }
 
-//function init() {
-//    watchLocation(function (coords) {
-//        document.getElementById('test').innerHTML = 'coords: ' + coords.latitude + ',' + coords.longitude;
-//    }, function () {
-//        document.getElementById('test').innerHTML = 'error';
-//    });
-//}
-
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        $('#location').attr('value', "Geolocation isn't available.");
-    }
-}
-
 function showPosition(position) {
     var addr_api = "https://maps.googleapis.com/maps/api/geocode/json?language=en&latlng=";
     lat = position.coords.latitude;
@@ -98,7 +82,6 @@ function showPosition(position) {
 
     fetch(url)
         .then(function (response) {
-            $('.title').text('SuccessTest');
             return response.text();
         }).then(function (text) {
             var addr = JSON.parse(text);
