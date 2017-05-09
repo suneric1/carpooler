@@ -2,9 +2,9 @@
 
 Carpooler is a website that helps you find out the best route when you carpool, as you'll need to stop by multiple locations. It uses Google's Distance Matrix API as well as Geocode API.
 
-When you are hanging out with your friends and you need to pick them up, just go to [Carpooler](http:/carpoolerapp.herokuapp.com) and create a new trip, then share the page with your friends. By tapping on "Add", they can easily enter their location which is auto-populated based on GPS. When they're done, you can tap on "Pool" and let Google Maps navigate you with the most timesaving route to pick them up!
+When you are hanging out with your friends and you need to pick them up, just go to [Carpooler](https:/carpoolerapp.herokuapp.com) and create a new trip, then share the page with your friends. By tapping on "Add", they can easily enter their location which is auto-populated based on GPS. When they're done, you can tap on "Pool" and let Google Maps navigate you with the most timesaving route to pick them up!
 
-### [Link to live website](http://carpoolerapp.herokuapp.com/)
+### [Link to live website](https://carpoolerapp.herokuapp.com/)
 
 ## How it was done
 
