@@ -91,7 +91,7 @@ function getLocation() {
 }
 
 function showPosition(position) {
-    var addr_api = "http://maps.googleapis.com/maps/api/geocode/json?language=en&latlng=";
+    var addr_api = "https://maps.googleapis.com/maps/api/geocode/json?language=en&latlng=";
     lat = position.coords.latitude;
     lng = position.coords.longitude;
     var url = addr_api + lat + "," + lng;
