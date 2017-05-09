@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Carpooler</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid col-xs-12" id="main">
+        <div class="row">
+            <h3 class="title">New Trip</h3>
+            <a href="/"><img src="/images/close.svg" alt=""></a>
+        </div>
+
+        <form class="form-horizontal" action="/create" method="POST">
+            <div class="form-group">
+                <label for="tripname">Trip Name</label>
+                <input type="text" placeholder="Example: Sunday In the Beach" name="tripname" id="tripname" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" placeholder="" name="name" id="name" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="destination">Destination</label>
+                <input type="text" placeholder="Enter Destination" name="destination" id="destination" class="form-control" onkeyup="autoComplete(this)" list="dest_suggest">
+                <datalist id="dest_suggest">
+                </datalist>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Your Location</label>
+                <input type="text" placeholder="Enter Your Location" name="location" id="location" class="form-control" onkeyup="autoComplete(this)" list="loc_suggest">
+                <datalist id="loc_suggest">
+                </datalist>
+                <button type="button" class="btn btn-default" onclick="getLocation()">GPS</button>
+            </div>
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="haveCar" id="haveCar">Do you have a car?</label>
+            </div>
+
+            <div class="form-group">
+                <label class="radio-inline">
+                    <input type="radio" name="seats" id="seats1" value="1"> 1
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="seats" id="seats2" value="2"> 2
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="seats" id="seats3" value="3"> 3
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="seats" id="seats4" value="4"> 4
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="seats" id="seats5" value="5"> 5
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="seats" id="seats6" value="6"> 6
+                </label>
+            </div>
+            <button type="submit" class="btn btn-default">Create</button>
+
+            <div class="clear"></div>
+
+        </form>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

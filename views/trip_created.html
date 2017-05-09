@@ -15,13 +15,25 @@
 
 <body>
     <div class="container-fluid col-xs-12" id="main">
-        <h3 class="title">Carpooler</h3>
-        <div>
-            <p>Carpooler makes your trip with friends easier!</p>
+        <div class="row">
+            <h3 class="title">Your trip has been created.</h3>
+            <p>Simply copy the URL and send it to your friends!</p>
         </div>
+        
+        <h4>{{tripname}}</h4>
+        <p>carpooler.com/trip/{{id}}</p>
+        
+        <h4>Destination</h4>
+        <p>{{destination}}</p>
+        
+        <h4>People</h4>
+        {{#list people}}
+        <p>{{name}}</p>
+        <p>{{location}}</p>
+        <p>Seats: {{seats}}</p>
+        {{/list}}
 
-        <a href="/new"><button type="button" class="btn btn-default">New Trip</button></a>
-        <a href="/find"><button type="button" class="btn btn-default">Find Trip</button></a>
+        <a href="/trip/{{id}}"><button type="button" class="btn btn-default">Trip Page</button></a>
     </div>
 
 
