@@ -16,8 +16,6 @@ const qs = require('querystring');
 var DISTANCE_API_URL = 'https://maps.googleapis.com/maps/api/distancematrix/json?';
 var API_KEY = 'AIzaSyBN5J7kC4rHwCTkgBJKAjjHecp6cIl-MP0';
 
-//getDistance('Dadeland Mall|University of Miami', 'University of Miami|Dadeland Mall');
-
 function getDistance(origin, destination, func) {
 
     var options = {
@@ -35,13 +33,6 @@ function getDistance(origin, destination, func) {
         }
     });
 }
-
-//var client = new Twit({
-//    consumer_key: 'lAu7pibfnQwnX7f8Ztu7oVYwk',
-//    consumer_secret: 'Qt1F6AKzTcsSH5jFdmlYVO8mWfZv7MIBanZaUfgnu1StHe7c2P',
-//    access_token: '46086006-w3g94WkgESdK1Ga4LyprkPhx39PKpcZXoi9JPsSm4',
-//    access_token_secret: 'uxlvnxrmEwk2xW1Vzj7kXemDr2ggAPWFOEmnlltDUJHkT'
-//});
 
 const server = new Hapi.Server({
     connections: {
@@ -115,11 +106,6 @@ server.route({
     }
 });
 
-
-var count = 0;
-var arrs = [];
-
-
 function swap(arr, i, j) {
     if (i != j) {
         var temp = arr[i];
@@ -129,6 +115,7 @@ function swap(arr, i, j) {
 }
 
 function perm(arr) {
+    var arrs = [];
     (function fn(n) {
         for (var i = n; i < arr.length; i++) {
             swap(arr, i, n);
@@ -142,6 +129,7 @@ function perm(arr) {
             swap(arr, i, n);
         }
     })(0);
+    return arrs;
 }
 
 server.route({
@@ -181,7 +169,7 @@ server.route({
                     for (var i = 0; i < locs.length; i++) {
                         arr.push(i);
                     }
-                    perm(arr);
+                    var arrs = perm(arr);
 
                     var totalTimes = [];
                     for (var i = 0; i < arrs.length; i++) {

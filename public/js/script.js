@@ -7,8 +7,6 @@ var key = "AIzaSyBN5J7kC4rHwCTkgBJKAjjHecp6cIl-MP0";
 var lat, lng;
 
 
-
-
 function autoComplete(obj) {
 
     var auto_api = "https://maps.googleapis.com/maps/api/place/autocomplete/json?language=en&input=";
